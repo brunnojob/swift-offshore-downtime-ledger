@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "repository": "brunnojob/swift-offshore-downtime-ledger",
+  "source_commit": "7967d2b222cd3373f51451c7b66ac50cd7ed5f25",
+  "generated_at": "2026-10-10T02:36:33.635804+00:00",
+  "run_url": "https://github.com/brunnojob/swift-offshore-downtime-ledger/actions/runs/38017575332",
+  "inputs_sha256": {
+    ".proof/scenarios.json": "f06d854bd7c93781ec9d1fd60b1f50e9711628aa0e7796a8cfeb58f5f885c91c",
+    "examples/input.txt": "c1b33584a356434388b12bedc86a32a020dca7d3762cf26e19c06190343800de"
+  },
+  "cases": [
+    {
+      "display": false,
+      "name": "swiftc Sources/main.swift -o app && ./app --self-test && ./app < examples/input.txt",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "swiftc Sources/main.swift -o app && ./app --self-test && ./app < examples/input.txt"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 12.799,
+      "output": "Tests passed\n{\"asset\":\"pump-A\",\"availability\":0.75,\"downtime\":6,\"mergedOutages\":2,\"observed\":24}\n{\"asset\":\"pump-B\",\"availability\":0.9583333333333334,\"downtime\":1,\"mergedOutages\":1,\"observed\":24}\n",
+      "output_sha256": "9d6faef4834636ab5aa6247918d309029960f52f4826f498bfc665f79836e304"
+    },
+    {
+      "display": true,
+      "name": "Application demonstration with checked output",
+      "argv": [
+        "./app"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.061,
+      "output": "{\"asset\":\"pump-A\",\"availability\":0.75,\"downtime\":6,\"mergedOutages\":2,\"observed\":24}\n{\"asset\":\"pump-B\",\"availability\":0.9583333333333334,\"downtime\":1,\"mergedOutages\":1,\"observed\":24}\n",
+      "output_sha256": "854d6b590a116e6ba3e8a62a092779fef7c963ac2ea3a5b7682709c0bb98ed55"
+    },
+    {
+      "display": true,
+      "name": "Reject an empty capture",
+      "argv": [
+        "./app"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.128,
+      "output": "Missing input\n",
+      "output_sha256": "59dde097c155045b6510b44b5d0ee86176974b3476c8b96718ac676f66134e97"
+    },
+    {
+      "display": true,
+      "name": "Reject malformed input",
+      "argv": [
+        "./app"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.129,
+      "output": "Invalid CSV row\n",
+      "output_sha256": "64aaf8a3f81772044320e6481a9fe33ac80bfdb41f6deb590512cd62c2cd30b7"
+    },
+    {
+      "display": true,
+      "name": "Reject unsupported invocation",
+      "argv": [
+        "./app",
+        "--unsupported"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.08,
+      "output": "Unsupported command arguments\n",
+      "output_sha256": "a7217611e9bf4e2fd5cbbd1b8b97c5898f154b14da948e9e35008b59b8158bcd"
+    },
+    {
+      "display": true,
+      "name": "Reject an oversized input record",
+      "argv": [
+        "./app"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.075,
+      "output": "Input record too large\n",
+      "output_sha256": "45eb187fdae97f09b79c4bcd5c03d9b942872125e5fb5b6a83011b36f8d62333"
+    }
+  ],
+  "passed": true
+}

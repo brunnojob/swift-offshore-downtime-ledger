@@ -1,0 +1,20 @@
+$ bash -e -o pipefail -c swiftc Sources/main.swift -o app && ./app --self-test && ./app < examples/input.txt
+Tests passed
+{"asset":"pump-A","availability":0.75,"downtime":6,"mergedOutages":2,"observed":24}
+{"asset":"pump-B","availability":0.9583333333333334,"downtime":1,"mergedOutages":1,"observed":24}
+
+$ ./app
+{"asset":"pump-A","availability":0.75,"downtime":6,"mergedOutages":2,"observed":24}
+{"asset":"pump-B","availability":0.9583333333333334,"downtime":1,"mergedOutages":1,"observed":24}
+
+$ ./app
+Missing input
+
+$ ./app
+Invalid CSV row
+
+$ ./app --unsupported
+Unsupported command arguments
+
+$ ./app
+Input record too large
