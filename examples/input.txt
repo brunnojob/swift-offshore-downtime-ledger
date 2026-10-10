@@ -1,0 +1,4 @@
+pump-A,1,4,overload
+pump-A,3,6,power-loss
+pump-A,10,11,repair
+pump-B,8,9,seal-leak
