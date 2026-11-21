@@ -1,4 +1,4 @@
 date=2026-11-21
-seq=23
-ts=1795230082
-scope=offline-db
+seq=24
+ts=1795230083
+scope=sla-calc
