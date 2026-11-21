@@ -1,4 +1,4 @@
 date=2026-11-21
-seq=142
-ts=1795230201
-scope=shift-sync
+seq=143
+ts=1795230202
+scope=offline-db
